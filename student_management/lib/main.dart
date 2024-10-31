@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:student_management/routes.dart';
+import 'package:student_management/screens/splash_screen.dart';
 
 void main() {
   runApp(const MainApp());
@@ -9,13 +11,10 @@ class MainApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      home: Scaffold(
-        
-        body: Center(
-          child: Text('every one start....... new project'),
-        ),
-      ),
+    return MaterialApp(
+      title: "School Managemnt  System",
+      initialRoute: SplashScreen.routeName,
+      routes: routes,
     );
   }
 }
