@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:student_management/screens/teacher/add_account.dart';
+import 'package:student_management/screens/teacher/attendance_screen.dart';
+import 'package:student_management/screens/teacher/homework.dart';
 
-class HomeScreen extends StatelessWidget {
-  const HomeScreen({super.key});
+class TeacherHomeScreen extends StatelessWidget {
+  const TeacherHomeScreen({super.key});
 
-  static String routeName = "HomeScreen";
+  static String routeName = "TeacherHomeScreen";
 
   @override
   Widget build(BuildContext context) {
@@ -52,12 +55,26 @@ class HomeScreen extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: [
                       Cards(
-                        onPress: () {},
+                        onPress: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => const Attendencescreen(),
+                            ),
+                          );
+                        },
                         icon: 'assets/icons/Attendance.png',
                         title: 'Attendance',
                       ),
                       Cards(
-                        onPress: () {},
+                        onPress: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => const HomeworkScreen(),
+                            ),
+                          );
+                        },
                         icon: 'assets/icons/Homework.png',
                         title: 'Homework',
                       ),
@@ -77,29 +94,52 @@ class HomeScreen extends StatelessWidget {
                         icon: 'assets/icons/exam_routine.png',
                         title: 'Exam Routine',
                       ),
+                      // Cards(
+                      //   onPress: () {},
+                      //   icon: 'assets/icons/solution.png',
+                      //   title: 'Solutions',
+                      // ),
                       Cards(
-                        onPress: () {},
-                        icon: 'assets/icons/solution.png',
-                        title: 'Solutions',
+                        onPress: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => const AddAccount(),
+                            ),
+                          );
+                          print('Add Account button pressed');
+                        },
+                        icon: 'assets/icons/add_user.png',
+                        title: 'Add Account',
                       ),
                       Cards(
-                        onPress: () {},
+                        onPress: () {
+                          print('pressed');
+                        },
                         icon: 'assets/icons/Notice.png',
                         title: 'Notice',
                       ),
                     ],
                   ),
-                  SizedBox(height: 16),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceAround,
-                    children: [
-                      Cards(
-                        onPress: () {},
-                        icon: 'assets/icons/add_user.png',
-                        title: 'Add Accousnt',
-                      ),
-                    ],
-                  ),
+                  // SizedBox(height: 16),
+                  // Row(
+                  //   mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  //   children: [
+                  //     Cards(
+                  //       onPress: () {
+                  //         Navigator.push(
+                  //           context,
+                  //           MaterialPageRoute(
+                  //             builder: (context) => const AddAccount(),
+                  //           ),
+                  //         );
+                  //         print('Add Account button pressed');
+                  //       },
+                  //       icon: 'assets/icons/add_user.png',
+                  //       title: 'Add Account',
+                  //     ),
+                  //   ],
+                  // ),
                   SizedBox(height: 16),
                 ],
               ),
@@ -117,7 +157,7 @@ class Cards extends StatelessWidget {
       required this.onPress,
       required this.icon,
       required this.title});
-  final VoidCallback onPress;
+  final Function() onPress;
   final String icon;
   final String title;
 

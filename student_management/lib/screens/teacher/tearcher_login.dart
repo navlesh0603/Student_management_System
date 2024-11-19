@@ -3,19 +3,20 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:student_management/components/custom_button.dart';
 import 'package:student_management/consts.dart';
 import 'package:student_management/screens/home_screen/home_screen.dart';
+import 'package:student_management/screens/teacher/t_home_screen.dart';
 
 late bool _passwordVisible;
 
-class LoginScreen extends StatefulWidget {
-  static String routeName = 'LoginScreen';
+class TeacherLogin extends StatefulWidget {
+  static String routeName = 'TeacherLogin';
 
-  const LoginScreen({super.key});
+  const TeacherLogin({super.key});
 
   @override
-  State<LoginScreen> createState() => _LoginScreenState();
+  State<TeacherLogin> createState() => _TeacherLoginState();
 }
 
-class _LoginScreenState extends State<LoginScreen> {
+class _TeacherLoginState extends State<TeacherLogin> {
   final _formKey = GlobalKey<FormState>();
 
   @override
@@ -89,7 +90,7 @@ class _LoginScreenState extends State<LoginScreen> {
                                         context,
                                         MaterialPageRoute(
                                             builder: (context) =>
-                                                HomeScreen()));
+                                                TeacherHomeScreen()));
                                   }
                                 },
                                 title: "LOGIN",

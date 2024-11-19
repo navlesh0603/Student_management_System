@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 
-class HomeScreen extends StatelessWidget {
-  const HomeScreen({super.key});
+class StudentHomeScreen extends StatelessWidget {
+  const StudentHomeScreen({super.key});
 
-  static String routeName = "HomeScreen";
+  static String routeName = "StudentHomeScreen";
 
   @override
   Widget build(BuildContext context) {
@@ -70,33 +70,22 @@ class HomeScreen extends StatelessWidget {
                   ),
                   SizedBox(height: 16),
                   Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
                       Cards(
                         onPress: () {},
                         icon: 'assets/icons/exam_routine.png',
                         title: 'Exam Routine',
                       ),
-                      Cards(
-                        onPress: () {},
-                        icon: 'assets/icons/solution.png',
-                        title: 'Solutions',
-                      ),
+                      // Cards(
+                      //   onPress: () {},
+                      //   icon: 'assets/icons/solution.png',
+                      //   title: 'Solutions',
+                      // ),
                       Cards(
                         onPress: () {},
                         icon: 'assets/icons/Notice.png',
-                        title: 'Notice',
-                      ),
-                    ],
-                  ),
-                  SizedBox(height: 16),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceAround,
-                    children: [
-                      Cards(
-                        onPress: () {},
-                        icon: 'assets/icons/add_user.png',
-                        title: 'Add Accousnt',
+                        title: 'Quiz',
                       ),
                     ],
                   ),
